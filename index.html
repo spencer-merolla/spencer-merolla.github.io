@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spencer Merolla | Quantitative Portfolio</title>
+    <title>Spencer Merolla | Portfolio</title>
     <style>
         :root {
-            --bg-color: #f8fafc;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --accent: #2563eb;
-            --card-bg: #ffffff;
-            --border: #e2e8f0;
+            --bg-color: #121212;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --border-color: #374151;
         }
 
         body {
@@ -23,101 +23,152 @@
             padding: 0;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
-        header {
-            margin-bottom: 4rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin: 0 0 0.5rem 0;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin: 0 0 1.5rem 0;
-        }
-
-        .pitch {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .links a {
-            display: inline-block;
-            margin-right: 1.5rem;
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
-        }
-
-        .links a:hover {
-            border-bottom: 2px solid var(--accent);
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+        .about-section {
             display: flex;
             align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
         }
 
-        h2::after {
-            content: "";
-            flex: 1;
-            margin-left: 1rem;
-            height: 1px;
-            background-color: var(--border);
+        .profile-pic-container {
+            flex-shrink: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            overflow: hidden;
+            background-color: #1f2937;
+        }
+
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .resume-btn-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .experience-section {
+            margin-bottom: 5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 3rem;
+        }
+
+        .job {
+            margin-bottom: 2.5rem;
+        }
+
+        .job h3 {
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .job .job-title {
+            font-style: italic;
+            color: var(--text-muted);
+            margin: 0 0 1rem 0;
+        }
+
+        .job ul {
+            color: var(--text-muted);
+            padding-left: 1.2rem;
+        }
+
+        .job li {
+            margin-bottom: 0.5rem;
+        }
+
+        .projects-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 3rem;
         }
 
         .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
+            background-color: #1f2937;
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 1.5rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #374151;
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.5rem;
         }
 
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0;
+        .project-header h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.4rem;
         }
 
         .project-links a {
-            font-size: 0.9rem;
             color: var(--accent);
             text-decoration: none;
             margin-left: 1rem;
+            font-size: 0.9rem;
         }
 
         .project-links a:hover {
@@ -129,15 +180,12 @@
         }
 
         .tag {
-            display: inline-block;
-            background-color: #eff6ff;
+            background-color: rgba(16, 185, 129, 0.1);
             color: var(--accent);
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
             font-size: 0.8rem;
-            font-weight: 500;
             margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
         }
 
         .project-desc {
@@ -145,41 +193,93 @@
             margin: 0;
         }
 
-        @media (max-width: 600px) {
-            .project-header {
+        @media (max-width: 768px) {
+            .about-section {
                 flex-direction: column;
+                text-align: center;
+                gap: 2rem;
             }
 
-            .project-links {
-                margin-top: 0.5rem;
+            nav {
+                justify-content: center;
             }
 
-            .project-links a {
-                margin-left: 0;
-                margin-right: 1rem;
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Spencer Merolla</h1>
-            <p class="subtitle">Economics & Environmental Science | College of the Holy Cross</p>
-            <p class="pitch">Quantitative analyst and economics researcher specializing in financial modeling, NLP, and climate transition risk. Leveraging SQL, Python, and statistical analysis to bridge the gap between environmental data and equity valuations.</p>
-            <div class="links">
-                <a href="resume.pdf" target="_blank">Resume</a>
-                <a href="https://www.linkedin.com/in/spencer-merolla-301988296" target="_blank">LinkedIn</a>
-                <a href="https://github.com/spencer-merolla" target="_blank">GitHub</a>
-            </div>
-        </header>
+    <nav>
+        <div style="font-weight: bold; font-size: 1.2rem; letter-spacing: 2px;">SM.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="https://github.com/spencer-merolla" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/spencer-merolla-301988296" target="_blank">LinkedIn</a>
+        </div>
+    </nav>
 
-        <section>
-            <h2>Featured Research & Engineering</h2>
+    <div class="container">
+        <section id="about" class="about-section">
+            <div class="profile-pic-container">
+                <img src="profile.jpg" alt="Spencer Merolla">
+            </div>
+            <div class="about-content">
+                <h1>About Me</h1>
+                <p>I am an Economics and Environmental Science senior at the College of the Holy Cross.</p>
+                <p>I operate as a quantitative analyst and economics researcher specializing in financial modeling, Natural Language Processing (NLP), and climate transition risk. By leveraging SQL, Python, and statistical analysis, I bridge the gap between complex environmental data and core equity valuations.</p>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="resume-btn-container">
+                <a href="resume.pdf" target="_blank" class="btn">View Resume</a>
+            </div>
+
+            <div class="job">
+                <h3>Ithaca Clean Energy / Manifoldz</h3>
+                <p class="job-title">AI & Marketing Intern (June 2025 - Present)</p>
+                <ul>
+                    <li>Refined and trained two distinct NLP models to optimize data extraction workflows.</li>
+                    <li>Streamlined business development pipelines, bridging the gap between raw AI outputs and actionable clean energy market strategies.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Natixis Investment Managers, Boston, MA</h3>
+                <p class="job-title">Research Assistant (June 2024 - September 2024)</p>
+                <ul>
+                    <li>Conducted empirical research on daily and weekly ETF price behavior to support quantitative trading strategies.</li>
+                    <li>Analyzed leading indicators, liquidity swings during macroeconomic news events, and mean reversion tendencies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Projects</h2>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">Climate Transition Risk & Valuation Model</h3>
+                    <h3>ETF Sentiment & Liquidity Analysis</h3>
+                    <div class="project-links">
+                        <a href="#">Source Code</a>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Quantitative Research</span>
+                    <span class="tag">Financial Modeling</span>
+                    <span class="tag">Market Liquidity</span>
+                </div>
+                <p class="project-desc">Engineered an analytical framework to track ETF sentiment, measuring liquidity swings and modeling reality against market expectations to identify mean reversion opportunities.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Climate Transition Risk & Valuation Model</h3>
                     <div class="project-links">
                         <a href="YOUR_STREAMLIT_URL_HERE" target="_blank">Live App</a>
                         <a href="https://github.com/spencer-merolla/climate-valuation-modeler" target="_blank">Source Code</a>
@@ -196,32 +296,17 @@
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">AI NLP Model Refinement | Ithaca Clean Energy</h3>
+                    <h3>Economics 1986-1990 Retrospective</h3>
+                    <div class="project-links">
+                        <a href="#">Read Essay</a>
+                    </div>
                 </div>
                 <div class="tags">
-                    <span class="tag">Natural Language Processing</span>
-                    <span class="tag">AI Training</span>
-                    <span class="tag">Market Strategy</span>
+                    <span class="tag">Macroeconomics</span>
+                    <span class="tag">Historical Policy Analysis</span>
                 </div>
-                <p class="project-desc">Refined and trained two distinct NLP models to optimize data extraction and business development pipelines. Bridged the gap between raw AI outputs and actionable clean energy market strategies as an AI & Marketing Intern.</p>
+                <p class="project-desc">Authored a comprehensive analytical essay examining the macroeconomic policy shifts, market realities, and regulatory frameworks defining the late 1980s US economy.</p>
             </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">ETF Price Behavior Analysis | Natixis</h3>
-                </div>
-                <div class="tags">
-                    <span class="tag">Quantitative Research</span>
-                    <span class="tag">Financial Modeling</span>
-                    <span class="tag">Market Liquidity</span>
-                </div>
-                <p class="project-desc">Conducted empirical research on daily and weekly ETF price behavior. Analyzed leading indicators, liquidity swings during news events, and mean reversion tendencies to support quantitative trading strategies during a summer research tenure.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Let's Connect</h2>
-            <p class="project-desc">I am actively seeking opportunities where quantitative finance meets environmental strategy. Feel free to connect with me on <a href="https://www.linkedin.com/in/spencer-merolla-301988296" style="color: var(--accent); text-decoration: none;">LinkedIn</a>.</p>
         </section>
     </div>
 </body>
