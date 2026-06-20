@@ -239,6 +239,80 @@
 
     <div class="container">
         <div class="main-column">
+            <!-- Skill Correlation Matrix -->
+            <div class="panel" style="padding: 2rem; margin-bottom: 2rem;">
+                <div class="feed-header" style="margin-bottom: 1rem;">
+                    <h2 class="panel-title" style="margin-bottom: 0; border: none;">Skill Utilization Matrix</h2>
+                    <span class="feed-meta" style="color: var(--accent-blue); font-weight: 600;">Technical Loading per Project</span>
+                </div>
+
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    A heat-mapped breakdown of technical skill deployment across recent quantitative projects and professional roles. Darker shading indicates primary architectural drivers.
+                </p>
+
+                <!-- Legend -->
+                <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                    <div style="display: flex; align-items: center; gap: 0.3rem;">
+                        <div style="width: 12px; height: 12px; background-color: #2563eb; border-radius: 2px;"></div> Primary Driver
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.3rem;">
+                        <div style="width: 12px; height: 12px; background-color: #93c5fd; border-radius: 2px;"></div> Supporting Tech
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.3rem;">
+                        <div style="width: 12px; height: 12px; background-color: #f3f4f6; border-radius: 2px; border: 1px solid #e5e7eb;"></div> Not Applied
+                    </div>
+                </div>
+
+                <!-- Heatmap Table -->
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 0.85rem;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 0.8rem; border: 1px solid #e5e7eb; background: #f8fafc; text-align: left; width: 30%;">Initiative / Role</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e5e7eb; background: #f8fafc; color: #4b5563;">Python & Pandas</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e5e7eb; background: #f8fafc; color: #4b5563;">SQL & Data Arch.</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e5e7eb; background: #f8fafc; color: #4b5563;">NLP & AI Models</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e5e7eb; background: #f8fafc; color: #4b5563;">Econometrics (OLS)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Climate Model -->
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; text-align: left; font-weight: 600; color: #111827; background: #f8fafc;">Climate Valuation Model</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #2563eb; color: white;">High</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #f3f4f6; color: #9ca3af;">-</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #f3f4f6; color: #9ca3af;">-</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #2563eb; color: white;">High</td>
+                            </tr>
+                            <!-- Ithaca -->
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; text-align: left; font-weight: 600; color: #111827; background: #f8fafc;">Ithaca Clean Energy (NLP)</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #93c5fd; color: #1e3a8a;">Med</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #93c5fd; color: #1e3a8a;">Med</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #2563eb; color: white;">High</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #f3f4f6; color: #9ca3af;">-</td>
+                            </tr>
+                            <!-- ETF Sentiment -->
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; text-align: left; font-weight: 600; color: #111827; background: #f8fafc;">ETF Sentiment Engine</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #2563eb; color: white;">High</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #93c5fd; color: #1e3a8a;">Med</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #93c5fd; color: #1e3a8a;">Med</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #f3f4f6; color: #9ca3af;">-</td>
+                            </tr>
+                            <!-- Natixis -->
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; text-align: left; font-weight: 600; color: #111827; background: #f8fafc;">Natixis Macro Research</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #f3f4f6; color: #9ca3af;">-</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #93c5fd; color: #1e3a8a;">Med</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #f3f4f6; color: #9ca3af;">-</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e5e7eb; background-color: #2563eb; color: white;">High</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div class="panel">
                 <h2 class="panel-title">Professional Experience</h2>
 
